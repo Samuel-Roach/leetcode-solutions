@@ -37,5 +37,8 @@ def main(argv):
                 added_title = added_id.replace('{title}', args.problem_title if args.problem_title != '' else 'Lorem Ipsum')
                 output.write(added_title)
 
+    with open(os.path.join(source_path, '..', 'TODO.md'), 'a') as todo:
+        todo.write(f'- [ ] {args.problem_id}\n')
+
 if __name__ == '__main__':
     main(argv[1:])
